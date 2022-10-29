@@ -1,0 +1,59 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc monitor -d 1 2 3 4 5
+
+
+bspc config window_gap 3
+bspc config split_ratio 0.52
+bspc config border_width 1
+bspc config gapless_monocle true
+bspc config borderless_monocle true
+bspc config swallow_first_click false
+bspc config focus_follows_pointer true
+bspc config pointer_modifier mod
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_side
+bspc config pointer_action2 resize_corner
+
+
+bspc rule -a xfce4-terminal desktop='^1' state=floating
+bspc rule -a firefox desktop='^2'
+bspc rule -a code desktop='^3'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Yad state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+
+
+# Border
+bspc config normal_border_color "#282828"
+bspc config active_border_color "#ebdbb2"
+bspc config focused_border_color "#00d184"
+
+#
+# Autostart
+#
+# Set display from arandr saved script
+sh ~/.screenlayout/monitor.sh &
+# Bar
+~/.config/polybar/launch.sh &
+# Notifications
+/usr/bin/dunst &
+# Polkit
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# Wallpaper
+nitrogen --restore &
+# Dex
+dex -a -s /etc/xdg/autostart/:~/.config/autostart/  
+# Picom (blur)
+sleep 3 && picom &
+# Intellij(Java Application)
+wmname LG3D
+# Enable num lock
+numlockx
+# Network Applet
+nm-applet --indicator &
+# Cursor
+xsetroot -cursor_name left_ptr &
