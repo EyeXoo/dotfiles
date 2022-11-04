@@ -19,7 +19,7 @@ bspc config pointer_action2 resize_corner
 
 
 bspc rule -a xfce4-terminal desktop='^1' state=floating
-bspc rule -a firefox desktop='^2'
+bspc rule -a brave desktop='^2'
 bspc rule -a code-oss desktop='^3'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Yad state=floating
