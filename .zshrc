@@ -27,6 +27,9 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 
+# Change nvim to vim
+alias vim='nvim'
+
 # Add help for key maps
 alias help='cat /home/$USER/.config/bspwm/keybindings'
 
@@ -55,4 +58,7 @@ alias clock="tty-clock -c -b -D -r"
 #      +---------------------------+ 
 #      |          StarShip         |
 #      +---------------------------+ 
+
 source "$HOME/.zsh/spaceship/spaceship.zsh"
+
+export PATH=$PATH:/home/yasouo/.spicetify
