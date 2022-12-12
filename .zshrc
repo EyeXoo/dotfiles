@@ -12,9 +12,9 @@ else
 fi
 
 
-#      +---------------------------+ 
+#      +---------------------------+
 #      |          aliases          |
-#      +---------------------------+ 
+#      +---------------------------+
 
 
 # Change cat to bat
@@ -27,37 +27,29 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 
-# Change nvim to vim
-alias vim='nvim'
-
 # Add help for key maps
 alias help='cat /home/$USER/.config/bspwm/keybindings'
 
-#      +---------------------------+ 
+# Add neofetch
+alias neofetch='/bin/neofetch --backend kitty --source $HOME/.config/neofetch/image.png --size '200px' --colors 5 5 7 4 4 7'
+
+#      +---------------------------+
 #      |            Path           |
-#      +---------------------------+ 
+#      +---------------------------+
 
 # Go path
 export PATH="$PATH:/home/yasouko/Documents/.development/lang/go/bin"
 
-#      +---------------------------+ 
-#      |           System          |
-#      +---------------------------+ 
-
-alias lock="/home/$USER/.config/bspwm/scripts/i3lock-fancy/i3lock-fancy.sh"
-alias shutdown="shutdown -h now"
-alias sleep="systemctl suspend"
-alias logout="bspc quit"
-
-#      +---------------------------+ 
+#      +---------------------------+
 #      |           Custom          |
-#      +---------------------------+ 
+#      +---------------------------+
 
-alias clock="tty-clock -c -b -D -r"
+alias clock='tty-clock -c -b -D -r'
+alias vim='nvim'
 
-#      +---------------------------+ 
+#      +---------------------------+
 #      |          StarShip         |
-#      +---------------------------+ 
+#      +---------------------------+
 
 source "$HOME/.zsh/spaceship/spaceship.zsh"
 
